@@ -1,0 +1,45 @@
+Area de Trabajo
+<!-- 	<pre>{{productos|json}}</pre> -->
+<pre>Producto: {{producto|json}}</pre>
+<form name="productoFrm" novalidate ng-submit="guardar()">
+  <div class="row form-group">
+    <div class="col-md-6">
+      <label for="">Nombre</label>
+      <input ng-model="producto.nombre" type="text" class="form-control" name="nombre">
+    </div>
+      <div class="col-md-6">
+        <label for="">Fecha</label>
+        <input ng-model="producto.fecha" type="date" class="form-control" name="fecha">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row cold-md-12">
+        <label for="">Precio</label>
+        <input ng-model="producto.precio" type="number" class="form-control" name="precio">
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button type="submit" class="btn btn-success btn-block">Guardar</button>
+      </div>
+    <div class="col-md-6">
+    <button type="button" class="btn btn-warning btn-block">Limpiar</button>
+  </div>
+</div>
+</form>
+<table class="table table-bordered">
+<thead>
+<th>Nombre</th>
+<th>Precio</th>
+<th>Acciones</th>
+</thead>
+<tbody>
+<tr ng-repeat="pro in productos">
+  <td>{{pro.nombre}}</td>
+  <td>{{pro.precio}}</td>
+  <td>	<button type="button" ng-click="editar(pro)">Editar</button></td>
+
+
+</tr>
+</tbody>
+</table>
